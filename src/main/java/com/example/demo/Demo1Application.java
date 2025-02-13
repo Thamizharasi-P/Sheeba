@@ -26,4 +26,9 @@ public class Demo1Application {
     public String createMovie(@RequestBody MovieDetails moviedetails) {
         return String.format("Movie name is %s", moviedetails.Name);
     }
+
+    @GetMapping("/getMovie")
+    public String getMovie() {
+        return "Visvasam";
+    }
 }
