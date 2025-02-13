@@ -22,12 +22,12 @@ public class Demo1Application {
         return String.format("I am %s!", Integer.toString(age));
     }
 
-    @PostMapping("/createMovie")
+    @PostMapping("/create-movie")
     public String createMovie(@RequestBody MovieDetails moviedetails) {
         return String.format("Movie name is %s", moviedetails.Name);
     }
 
-    @GetMapping("/getMovie")
+    @GetMapping("/get-movie")
     public String getMovie() {
         return "Visvasam";
     }
