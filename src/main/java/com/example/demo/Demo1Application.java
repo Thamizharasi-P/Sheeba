@@ -29,6 +29,6 @@ public class Demo1Application {
 
     @GetMapping("/get-movie")
     public String getMovie() {
-        return "Visvasam";
+        return "Thunivu";
     }
 }
