@@ -6,4 +6,6 @@ public interface EmployeeServiceContract {
     Employee[] GetAllEmployees();
 
     Employee GetEmployeeById(int id);
+
+    void Create(int id, String name, int age);
 }
