@@ -35,17 +35,40 @@ public class EmployeeService implements EmployeeServiceContract {
         return null;
     }
 
-    public void Create(int id, String name, int age) {
+    public String Create(int id, String name, int age) {
 
-        for (Employee empl : _employees) {
-            if (id != empl.Id) {
-                Employee employee = new Employee(id, name);
-                _employees.add(employee);
-            } else {
+        boolean exists = false;
 
+        for (Employee emp : _employees) {
+            if (emp.Id == id) {
+                exists = true;
+                break;
             }
         }
 
+        if (!exists) {
+            _employees.add(new Employee(id, name));
+            return "employee added successfully";
+        } else {
+            return "employee already exists";
+        }
+    }
+
+    public String Update(int id, String name, int age) {
+
+        boolean exist = false;
+
+        for (Employee e : _employees) {
+            if (e.Id == id) {
+                exist = true;
+                break;
+            }
+        }
+
+        if (exist) {
+            _employees.set(id, name);
+            _employees.set(id, age);
+        }
     }
 
 

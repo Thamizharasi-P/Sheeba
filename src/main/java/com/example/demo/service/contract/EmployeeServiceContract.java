@@ -7,5 +7,5 @@ public interface EmployeeServiceContract {
 
     Employee GetEmployeeById(int id);
 
-    void Create(int id, String name, int age);
+    String Create(int id, String name, int age);
 }
