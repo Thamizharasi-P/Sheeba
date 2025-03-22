@@ -36,4 +36,9 @@ public class EmployeeController {
         return _employeeService.Create(id, name, age);
     }
 
+    @PostMapping("/update-employee-details")
+    public void update(@RequestParam(value = "id") int id, @RequestParam(value = "Name") String name, @RequestParam(value = "Age") int age) {
+        _employeeService.Update(id, name, age);
+    }
+
 }

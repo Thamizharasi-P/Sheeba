@@ -54,20 +54,13 @@ public class EmployeeService implements EmployeeServiceContract {
         }
     }
 
-    public String Update(int id, String name, int age) {
-
-        boolean exist = false;
+    public void Update(int id, String name, int age) {
 
         for (Employee e : _employees) {
             if (e.Id == id) {
-                exist = true;
-                break;
+                e.Name = name;
+                e.Age = age;
             }
-        }
-
-        if (exist) {
-            _employees.set(id, name);
-            _employees.set(id, age);
         }
     }
 
